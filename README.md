@@ -1,2 +1,2 @@
 # Zenko-MD
-Zemko Metadata Gateway
+Zenko Metadata Gateway

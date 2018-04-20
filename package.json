@@ -1,0 +1,20 @@
+{
+    "name": "Zenko-MD",
+    "description": "Zenko Metadata Gateway",
+    "version": "0.0.1",
+    "license": "Apache-2.0",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/scality/Zenko-MD.git"
+    },
+    "dependencies": {
+        "arsenal": "scality/Arsenal#ft/ZENKO-18/metadata-proxy-server",
+        "eslint": "^2.4.0",
+        "eslint-config-airbnb": "^6.0.0",
+        "eslint-config-scality": "scality/Guidelines"
+    },
+    "scripts": {
+        "start": "node ./index.js",
+        "lint": "eslint $(git ls-files '*.js')"
+    }
+}

@@ -1,0 +1,23 @@
+---
+general:
+  branches:
+    ignore:
+      - /^ultron\/.*/  # Ignore ultron/* branches
+
+machine:
+  node:
+    version: 6.9.5
+  services:
+    - docker
+  environment:
+    CXX: g++-4.9
+
+dependencies:
+  override:
+    - rm -rf node_modules
+    - npm install
+
+test:
+  override:
+    - npm run --silent lint -- --max-warnings 0
+    - docker build -t ZenkoMDGateway .

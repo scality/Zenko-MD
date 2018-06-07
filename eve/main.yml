@@ -1,0 +1,20 @@
+version: "0.2"
+
+branches:
+  user/*, feature/*, improvement/*, bugfix/*, w/*, q/*, hotfix/*:
+    stage: "pre-merge"
+stages:
+  pre-merge:
+    worker:
+      type: kube_pod
+      path: eve/workers/pod.yaml
+      images:
+        agressor: eve/workers/agressor
+    steps:
+    - Git: &git_pull
+        name: git pull
+        repourl: "%(prop:git_reference)s"
+        mode: full
+        method: clobber
+        retryFetch: true
+        haltOnFailure: true

@@ -4,6 +4,15 @@ metadata:
   name: "pod"
 spec:
   containers:
+  - name: Zenko-MD
+    resources:
+      requests:
+        cpu: 500m
+        memory: 1Gi
+      limits:
+        cpu: "1"
+        memory: 2Gi
+    image: "{{ images.mdproxy }}"
   - name: agressor
     resources:
       requests:

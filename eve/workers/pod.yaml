@@ -4,6 +4,32 @@ metadata:
   name: "pod"
 spec:
   containers:
+  - name: zenko-md
+    env:
+      - name: S3METADATA
+        value: "mem"
+      - name: MDP_LISTEN_PORT
+        value: "9000"
+      - name: MDP_BIND_ADDRESS
+        value: "0.0.0.0"
+      - name: MDP_WORKERS
+        value: "1"
+      - name: LOG_LEVEL
+        value: "debug"
+    readinessProbe:
+      httpGet:
+        scheme: "HTTP"
+        host: "localhost"
+        port: 9000
+        path: "/default/metadataInformation"
+    resources:
+      requests:
+        cpu: 500m
+        memory: 1Gi
+      limits:
+        cpu: "1"
+        memory: 2Gi
+    image: "{{ images.mdproxy }}"
   - name: agressor
     resources:
       requests:

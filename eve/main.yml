@@ -9,6 +9,7 @@ stages:
       type: kube_pod
       path: eve/workers/pod.yaml
       images:
+        mdproxy: "."
         agressor: eve/workers/agressor
     steps:
     - Git: &git_pull
@@ -18,3 +19,9 @@ stages:
         method: clobber
         retryFetch: true
         haltOnFailure: true
+    - ShellCommand:
+        name: npm install
+        command: npm install
+    - ShellCommand:
+        name: run the test
+        command: npm test

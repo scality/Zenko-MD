@@ -11,8 +11,8 @@
         "eslint": "^2.4.0",
         "eslint-config-airbnb": "^6.0.0",
         "eslint-config-scality": "scality/Guidelines",
-        "arsenal": "github:scality/Arsenal#development/8.0",
-        "werelogs": "github:scality/werelogs#development/8.0"
+        "arsenal": "github:scality/Arsenal#8.0",
+        "werelogs": "github:scality/werelogs#8.1.0"
     },
     "devDependencies": {
         "async": "^2.6.1",
